@@ -45,7 +45,6 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         queries: security-and-quality
-        packs: codeql/java-queries codeql/javascript-queries codeql/web-queries
 
     - name: Build with Maven
       if: matrix.language == 'java-kotlin'
