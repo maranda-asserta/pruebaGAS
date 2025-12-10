@@ -435,11 +435,6 @@
 			<version>2.14.1</version>
 		</dependency>
 		<dependency>
-			<groupId>jasperreports</groupId>
-			<artifactId>jasperreports-liberation-fonts</artifactId>
-			<version>3.7.2</version>
-		</dependency>
-		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports-fonts</artifactId>
 			<version>6.0.0</version>
