@@ -1,24 +1,18 @@
-/*
- * Copyright Logister, S.A.
- */
-package com.logister.silicon.model.commons.maestros;
-
 import java.util.ArrayList;
 
-import com.logister.silicon.model.commons.utils.PipedBuffer;
 
 /**
- * Transfer Object de la tabla FORMCOME (Especialidades Farmacéuticas; antes era "Formas comerciales")
+ * Transfer Object de la tabla FORMCOME (Especialidades Farmacï¿½uticas; antes era "Formas comerciales")
  * 
  * @author marta
  * @author <a href="mailto:carles.bellonch@grifols.com">Carles Bellonch</a>
  */
-public class FCTO extends com.logister.commons.to.EntityMaestroTO {
+public class FCTO {
 
 	public static final String REPOSICION_COMPRA = "C";
 	public static final String REPOSICION_FABRICACION = "F";
 
-	/** Constantes para el campo Duración */
+	/** Constantes para el campo Duraciï¿½n */
 	public static final String DURACION_HORAS = "H";
 	public static final String DURACION_DIAS = "D";
 	public static final String DURACION_SEMANAS = "S";
@@ -38,15 +32,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	/** columna NEMONICOGESTION */
 	private String nemonicoGestion;
 
-	/** columna IDGENERI - Genericos */
-	private GenericoFKTO generico;
-
-	/** columna IDESPECIALIDADTIPO */
-	private EspecialidadTipoFKTO tipoEspecialidadFKTO;
-
-	/** columna IDPROVEEDOR - Proveedores */
-	private ProveedorFKTO proveedor;
-
 	/** columna EXTRANJE */
 	private Boolean extranje;
 
@@ -65,7 +50,7 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	public static final String COMPARTIBLE_EN_CARRO_SI = "S";
 	/** la esp. farmaceutica NO es compartible en un carro para diferentes pacientes */
 	public static final String COMPARTIBLE_EN_CARRO_NO = "N";
-	/** la esp. farmaceutica es compartible en un carro para diferentes pacientes, según se indica en el carro */
+	/** la esp. farmaceutica es compartible en un carro para diferentes pacientes, segï¿½n se indica en el carro */
 	public static final String COMPARTIBLE_EN_CARRO_SEGUN_CARRO = "C";
 
 	/** columna DURAABIE */
@@ -73,18 +58,12 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	/** columna DURABIUN */
 	private String duracionUnidades;
 
-	/** sin columna, se encuentra en el genérico */
+	/** sin columna, se encuentra en el genï¿½rico */
 	private String formaFarmaceutica;
-	/** sin columna */
-	private FormaFarmaFKTO formaFarmaceuticaUnidad;
 	/** columna FACTORCOMPRA */
 	private Integer factorCompra;
-	/** columna FACTORSTOCKCOMPRA */
-	private StockUnidadFKTO factorCompraUnidad;
 	/** columna FACTORSUMINISTRO */
 	private Integer factorSuministro;
-	/** columna FACTORSTOCKSUMINISTRO */
-	private StockUnidadFKTO factorSuministroUnidad;
 
 	/** columna PEDIDOMINIMO */
 	private Integer pedidoMinimo;
@@ -113,12 +92,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	public static final String TRATAMIENTOLOTE_NO = "N";
 	public static final String TRATAMIENTOLOTE_CONTROLCADUCIDAD = "C";
 
-	/** columna IDENVASETIPO */
-	private EnvaseTipoFKTO tipoEnvaseFKTO;
-
-	/** columna IDIVA */
-	private IvaTipoFKTO tipoIVAFKTO;
-
 	/** columna DESCUENTO */
 	private Double descuento = new Double(0.0);
 
@@ -129,16 +102,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	private Double copago;
 	private Boolean isCopago;
 
-	/** columna IDCUENTACONTABLE */
-	private CuentaContableFKTO cuentaContableFKTO;
-
-	/** columnas CLAVE1..5 */
-	private ClaveFKTO clave1FKTO;
-	private ClaveFKTO clave2FKTO;
-	private ClaveFKTO clave3FKTO;
-	private ClaveFKTO clave4FKTO;
-	private ClaveFKTO clave5FKTO;
-
 	/** columna FACDISAM */
 	private Integer facdisam;
 	/** columna FACDISHD */
@@ -146,13 +109,13 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	/** columna FACDISDO */
 	private Integer facdisdo;
 	/**
-	 * La cantidad dispensada se ajustará al anterior entero múltiplo del múltiplo de dispensación de la ficha de
+	 * La cantidad dispensada se ajustarï¿½ al anterior entero mï¿½ltiplo del mï¿½ltiplo de dispensaciï¿½n de la ficha de
 	 * especialidad
 	 */
 	public static final String POR_DEFECTO = "D";
-	/** La cantidad se ajustará al siguiente entero múltiplo del múltiplo de dispensación de la ficha de especialidad. */
+	/** La cantidad se ajustarï¿½ al siguiente entero mï¿½ltiplo del mï¿½ltiplo de dispensaciï¿½n de la ficha de especialidad. */
 	public static final String POR_EXCESO = "E";
-	/** La cantidad se ajustará al entero múltiplo más próximo del múltiplo de dispensación de la ficha de especialidad */
+	/** La cantidad se ajustarï¿½ al entero mï¿½ltiplo mï¿½s prï¿½ximo del mï¿½ltiplo de dispensaciï¿½n de la ficha de especialidad */
 	public static final String AL_MAS_PROXIMO = "P";
 
 	/**
@@ -207,9 +170,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	/** columna IFFRACCI */
 	private Integer iffracci;
 
-	/** columna IDORDTIP */
-	private OrdenacionesTipoFKTO ordenacionesTipoFKTO;
-
 	/** columna FCPVL */
 	private Double fcpvl;
 	/** columna FCPVP */
@@ -226,21 +186,12 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	/** columna ACTIVO */
 	private Boolean activo;
 
-	/** idconten */
-	private ContenedorFKTO contenedorFKTO;
-
 	/** columna COMPOSICIONVALIDA */
 	private String composicionValida;
 
 	/* Sin columna. Para mostrar el estado del campo COMPOSICIONVALIDA */
 	private String nombreFicheroImagenComposicionValida;
 	private String literalImagenComposicionValida;
-
-	/** columna IDAREARESOLUCIONFABRICACION */
-	private AreaResolucionFKTO areaResolucionFabricacionFKTO;
-
-	/** columna IDUTFABRICACION */
-	private UeFKTO unidadTratamientoFabricacionFKTO;
 
 	/** columna CANTIDADRECOMENDADA */
 	private Long cantidadRecomendada;
@@ -251,7 +202,7 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	/**
 	 * columna IDMEDICATRASPASO. Es el id de otra especialidad de FORMCOME a la que se ha traspasado la especialidad
 	 * representada por este objeto FCTO. Se utiliza en el proceso de traspaso de especialidad. En el maestro de
-	 * especialidades, representa a la especialidad de la pestaña "Gestión" fila "Traspasada por".
+	 * especialidades, representa a la especialidad de la pestaï¿½a "Gestiï¿½n" fila "Traspasada por".
 	 */
 //	private Long idMedicaTraspaso;
 //	private String codinaciMedicaTraspaso; // Sin columna.
@@ -260,14 +211,14 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	private Boolean lanzarTraspaso; // Sin columna
 	private FCTO especialidadTraspaso;
 
-	/** Fabricación normalizada */
+	/** Fabricaciï¿½n normalizada */
 	/** sin columna. Booleano que indica si existen albaranes de compra asociados a la especialidad */
 	private Boolean isReposicionCompraAndAlbaranCompraAsociado;
-	/** sin columna. Booleano que indica si existen órdenes de fabricación asociadas */
+	/** sin columna. Booleano que indica si existen ï¿½rdenes de fabricaciï¿½n asociadas */
 	private Boolean isReposicionFabricarAndOrdenFabricacionAsociada;
-	/** sin columna. Booleano que indica si se debe habilitar/deshabilitar la pestaña de fabricación normalizada */
+	/** sin columna. Booleano que indica si se debe habilitar/deshabilitar la pestaï¿½a de fabricaciï¿½n normalizada */
 	private Boolean isPestanyaFabricacionVisible;
-	/** sin columna. Booleano que indica si se debe habilitar/deshabilitar el botón 'eliminar' */
+	/** sin columna. Booleano que indica si se debe habilitar/deshabilitar el botï¿½n 'eliminar' */
 	private Boolean isBotonEliminarActivo;
 
 	private boolean pestanyaExcipientesActiva;
@@ -279,13 +230,13 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	private boolean pestanyaInfantilActiva;
 	private boolean pestanyaGestionActiva;
 
-	/** Fabricación normalizada. Constantes para el estado de la validación de la especialida */
+	/** Fabricaciï¿½n normalizada. Constantes para el estado de la validaciï¿½n de la especialida */
 	public static final String FABRICACION_NORMALIZADA_PENDIENTE_VALIDAR_COMPOSICION = "PE";
 	public static final String FABRICACION_NORMALIZADA_IMPOSIBLE_VALIDAR = "IV";
 	public static final String FABRICACION_NORMALIZADA_COMPOSICION_NO_VALIDA = "NV";
 	public static final String FABRICACION_NORMALIZADA_COMPOSICION_VALIDA = "V";
 	public static final String FABRICACION_NORMALIZADA_ESTADO_POR_DEFECTO = FCTO.FABRICACION_NORMALIZADA_PENDIENTE_VALIDAR_COMPOSICION;
-	//Catálogos de medicación asociados a la especialidad
+	//Catï¿½logos de medicaciï¿½n asociados a la especialidad
 	private ArrayList<Long> idCatalogoAL;
 
 	public FCTO() {
@@ -308,8 +259,8 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	}
 
 	/**
-	 * Sobrescribimos el método equals. Dos elementos son iguales si tiene el mismo ID. Si se modifica hay que tener en
-	 * cuenta que algunos procesos dependen de que se compare sólo el ID.
+	 * Sobrescribimos el mï¿½todo equals. Dos elementos son iguales si tiene el mismo ID. Si se modifica hay que tener en
+	 * cuenta que algunos procesos dependen de que se compare sï¿½lo el ID.
 	 */
 	public boolean equals(Object fc) {
 		boolean ret = false;
@@ -410,22 +361,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 
 	public void setComposicionValida(String composicionValida) {
 		this.composicionValida = composicionValida;
-	}
-
-	public AreaResolucionFKTO getAreaResolucionFabricacionFKTO() {
-		return areaResolucionFabricacionFKTO;
-	}
-
-	public void setAreaResolucionFabricacionFKTO(AreaResolucionFKTO areaResolucionFabricacionFKTO) {
-		this.areaResolucionFabricacionFKTO = areaResolucionFabricacionFKTO;
-	}
-
-	public UeFKTO getUnidadTratamientoFabricacionFKTO() {
-		return unidadTratamientoFabricacionFKTO;
-	}
-
-	public void setUnidadTratamientoFabricacionFKTO(UeFKTO unidadTratamientoFabricacionFKTO) {
-		this.unidadTratamientoFabricacionFKTO = unidadTratamientoFabricacionFKTO;
 	}
 
 	public Long getCantidadRecomendada() {
@@ -557,14 +492,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		this.multidos = multidos;
 	}
 
-	public GenericoFKTO getGenerico() {
-		return generico;
-	}
-
-	public void setGenerico(GenericoFKTO generico) {
-		this.generico = generico;
-	}
-
 	public String getDuracion() {
 		return duracion;
 	}
@@ -625,24 +552,9 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		return fraccionIngreso;
 	}
 
-	public Integer getFraccionIngresadoSegunUEInfantil(String tipoUE) {
-		if (tipoUE != null && tipoUE.equalsIgnoreCase(UeTO.TIPOPACIENTEUE_INFANTIL)) {
-			return iffracci;
-		} else {
-			return fraccionIngreso;
-		}
-	}
 
 	public void setFraccionIngreso(Integer fraccionIngreso) {
 		this.fraccionIngreso = fraccionIngreso;
-	}
-
-	public ProveedorFKTO getProveedor() {
-		return proveedor;
-	}
-
-	public void setProveedor(ProveedorFKTO proveedor) {
-		this.proveedor = proveedor;
 	}
 
 	public Boolean getFinaliza() {
@@ -721,10 +633,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		return dispFormulaMagistral;
 	}
 
-	public OrdenacionesTipoFKTO getOrdenacionesTipoFKTO() {
-		return ordenacionesTipoFKTO;
-	}
-
 	public Boolean getEnguia() {
 		return enguia;
 	}
@@ -745,18 +653,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		return tratamientoLote;
 	}
 
-	public IvaTipoFKTO getTipoIVAFKTO() {
-		return tipoIVAFKTO;
-	}
-
-	public EspecialidadTipoFKTO getTipoEspecialidadFKTO() {
-		return tipoEspecialidadFKTO;
-	}
-
-	public EnvaseTipoFKTO getTipoEnvaseFKTO() {
-		return tipoEnvaseFKTO;
-	}
-
 	public Boolean getPermiteComprar() {
 		return permiteComprar;
 	}
@@ -769,25 +665,8 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		return nemonicoGestion;
 	}
 
-	public String getFormaFarmaceutica() {
-		if (this.formaFarmaceutica != null)
-			return formaFarmaceutica;
-		else if (this.formaFarmaceuticaUnidad != null)
-			return this.formaFarmaceuticaUnidad.getDescripcion();
-		else
-			return null;
-	}
-
-	public StockUnidadFKTO getFactorSuministroUnidad() {
-		return factorSuministroUnidad;
-	}
-
 	public Integer getFactorSuministro() {
 		return factorSuministro;
-	}
-
-	public StockUnidadFKTO getFactorCompraUnidad() {
-		return factorCompraUnidad;
 	}
 
 	public Integer getFactorCompra() {
@@ -810,30 +689,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		return descripcionGestion;
 	}
 
-	public CuentaContableFKTO getCuentaContableFKTO() {
-		return cuentaContableFKTO;
-	}
-
-	public ClaveFKTO getClave5FKTO() {
-		return clave5FKTO;
-	}
-
-	public ClaveFKTO getClave4FKTO() {
-		return clave4FKTO;
-	}
-
-	public ClaveFKTO getClave3FKTO() {
-		return clave3FKTO;
-	}
-
-	public ClaveFKTO getClave2FKTO() {
-		return clave2FKTO;
-	}
-
-	public ClaveFKTO getClave1FKTO() {
-		return clave1FKTO;
-	}
-
 	public String getAltidPres() {
 		return altidPres;
 	}
@@ -846,20 +701,8 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		return lugarDispensacion;
 	}
 
-	public ContenedorFKTO getContenedorFKTO() {
-		return contenedorFKTO;
-	}
-
-	public FormaFarmaFKTO getFormaFarmaceuticaUnidad() {
-		return formaFarmaceuticaUnidad;
-	}
-
 	public void setDispFormulaMagistral(Boolean dispFormulaMagistral) {
 		this.dispFormulaMagistral = dispFormulaMagistral;
-	}
-
-	public void setOrdenacionesTipoFKTO(OrdenacionesTipoFKTO ordenacionesTipoFKTO) {
-		this.ordenacionesTipoFKTO = ordenacionesTipoFKTO;
 	}
 
 	public void setEnguia(Boolean enguia) {
@@ -882,18 +725,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		this.tratamientoLote = tratamientoLote;
 	}
 
-	public void setTipoIVAFKTO(IvaTipoFKTO tipoIVAFKTO) {
-		this.tipoIVAFKTO = tipoIVAFKTO;
-	}
-
-	public void setTipoEspecialidadFKTO(EspecialidadTipoFKTO tipoEspecialidadFKTO) {
-		this.tipoEspecialidadFKTO = tipoEspecialidadFKTO;
-	}
-
-	public void setTipoEnvaseFKTO(EnvaseTipoFKTO tipoEnvaseFKTO) {
-		this.tipoEnvaseFKTO = tipoEnvaseFKTO;
-	}
-
 	public void setPermiteComprar(Boolean permiteComprar) {
 		this.permiteComprar = permiteComprar;
 	}
@@ -910,16 +741,8 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		this.formaFarmaceutica = formaFarmaceutica;
 	}
 
-	public void setFactorSuministroUnidad(StockUnidadFKTO factorSuministroUnidad) {
-		this.factorSuministroUnidad = factorSuministroUnidad;
-	}
-
 	public void setFactorSuministro(Integer factorSuministro) {
 		this.factorSuministro = factorSuministro;
-	}
-
-	public void setFactorCompraUnidad(StockUnidadFKTO factorCompraUnidad) {
-		this.factorCompraUnidad = factorCompraUnidad;
 	}
 
 	public void setFactorCompra(Integer factorCompra) {
@@ -940,30 +763,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 
 	public void setDescripcionGestion(String descripcionGestion) {
 		this.descripcionGestion = descripcionGestion;
-	}
-
-	public void setCuentaContableFKTO(CuentaContableFKTO cuentaContableFKTO) {
-		this.cuentaContableFKTO = cuentaContableFKTO;
-	}
-
-	public void setClave5FKTO(ClaveFKTO clave5FKTO) {
-		this.clave5FKTO = clave5FKTO;
-	}
-
-	public void setClave4FKTO(ClaveFKTO clave4FKTO) {
-		this.clave4FKTO = clave4FKTO;
-	}
-
-	public void setClave3FKTO(ClaveFKTO clave3FKTO) {
-		this.clave3FKTO = clave3FKTO;
-	}
-
-	public void setClave2FKTO(ClaveFKTO clave2FKTO) {
-		this.clave2FKTO = clave2FKTO;
-	}
-
-	public void setClave1FKTO(ClaveFKTO clave1FKTO) {
-		this.clave1FKTO = clave1FKTO;
 	}
 
 	public void setAltidPres(String altidPres) {
@@ -1010,14 +809,6 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 		this.lugarDispensacion = lugarDispensacion;
 	}
 
-	public void setContenedorFKTO(ContenedorFKTO contenedorFKTO) {
-		this.contenedorFKTO = contenedorFKTO;
-	}
-
-	public void setFormaFarmaceuticaUnidad(FormaFarmaFKTO formaFarmaceuticaUnidad) {
-		this.formaFarmaceuticaUnidad = formaFarmaceuticaUnidad;
-	}
-
 //	public String getCodinaciMedicaTraspaso() {
 //		return codinaciMedicaTraspaso;
 //	}
@@ -1059,52 +850,9 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	}
 
 	/**
-	 * LOPD
-	 */
-	public String printLopd() {
-		PipedBuffer linea = new PipedBuffer();
-
-		linea.append(this.id);
-		linea.append(this.codinaci);
-		linea.append(this.descripcion);
-		linea.append(this.nemonico);
-		linea.append(this.descripcionGestion);
-		linea.append(this.nemonicoGestion);
-		linea.append(this.activo);
-		linea.append(this.ensaclin);
-		linea.append(this.extranje);
-		linea.append(this.multidos);
-		linea.append(this.generico != null ? this.generico.getId() : Long.valueOf(0l));
-		linea.append(this.duracion);
-		linea.append(this.altidPres);
-		linea.append(this.altidGestion);
-		linea.append(this.ean13compra);
-		linea.append(this.ean13suministro);
-		linea.append(this.factorCompra);
-		linea.append(this.factorCompraUnidad.getCodigo());
-		linea.append(this.factorSuministro);
-		linea.append(this.factorSuministroUnidad.getCodigo());
-		linea.append(this.gestionarPedidosPor);
-		linea.append(this.fraccionIngreso);
-		linea.append(this.fraccionAmbulatorio);
-		linea.append(this.proveedor != null ? this.proveedor.getId() : Long.valueOf(0l));
-		linea.append(this.finaliza);
-		linea.append(this.compartibleEnCarro);
-		linea.append(this.dispensar);
-		linea.append(this.dispMiv);
-		linea.append(this.dispFormulaMagistral);
-		linea.append(this.getOrdenacionesTipoFKTO() != null ? this.getOrdenacionesTipoFKTO().getDescripcion() : "");
-		linea.append(this.getIdUsuario());
-		linea.append(this.getFechaProceso());
-		linea.append(this.getContenedorFKTO() != null ? this.getContenedorFKTO().getDescripcion() : "");
-
-		return linea.toString();
-	}
-
-	/**
 	 * Retorna los indices a nivel de base de datos de la tabla en un ArrayList.<BR>
-	 * El orden de devolución ha de ser el mismo que posteriormente, se use para instanciar los parametros de una
-	 * sentencia SQL. El orden también es importante debido a que se utiliza en MaestroBrowser.jsp<BR>
+	 * El orden de devoluciï¿½n ha de ser el mismo que posteriormente, se use para instanciar los parametros de una
+	 * sentencia SQL. El orden tambiï¿½n es importante debido a que se utiliza en MaestroBrowser.jsp<BR>
 	 * En los indices de tipo BD no se acepta la coma; sino daria problemas con MaestroBrowser.jsp
 	 */
 	public ArrayList getIdBD() {
@@ -1114,8 +862,8 @@ public class FCTO extends com.logister.commons.to.EntityMaestroTO {
 	}
 
 	/**
-	 * Retorna los indices a nivel de la aplicación Silicon de esta tabla en un ArrayList.<BR>
-	 * El orden de devolución ha de ser el mismo que posteriormente, se use para instanciar los parametros de una
+	 * Retorna los indices a nivel de la aplicaciï¿½n Silicon de esta tabla en un ArrayList.<BR>
+	 * El orden de devoluciï¿½n ha de ser el mismo que posteriormente, se use para instanciar los parametros de una
 	 * sentencia SQL.
 	 */
 	public ArrayList<String> getIdEntidad() {

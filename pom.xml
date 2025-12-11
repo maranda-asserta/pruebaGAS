@@ -422,6 +422,10 @@
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>com.github.librepdf</groupId>
+					<artifactId>openpdf</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
