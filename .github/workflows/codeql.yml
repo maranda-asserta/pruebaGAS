@@ -19,7 +19,6 @@ env:
   
 jobs:
   analyze:
-    if: ${{ github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch' }}
     name: Analyze (${{ matrix.language }})
     runs-on: 'ubuntu-latest'
     permissions:
