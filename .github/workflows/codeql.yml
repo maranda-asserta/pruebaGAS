@@ -47,6 +47,7 @@ jobs:
         queries: security-and-quality
 
     - name: Install DBUpgrade-6.0.1.19.jar to local Maven repo
+      if: matrix.language == 'java-kotlin'
       run: |
         mvn install:install-file \
           -Dfile=lib/DBUpgrade-6.0.1.19.jar \
