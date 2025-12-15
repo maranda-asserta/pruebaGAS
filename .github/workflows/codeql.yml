@@ -7,6 +7,12 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '0 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch Name:'
+        required: false
+        default: 'main'
 
 env:
   JAVA_VERSION: '21'
