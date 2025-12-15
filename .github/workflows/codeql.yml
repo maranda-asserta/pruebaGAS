@@ -8,19 +8,17 @@ on:
   schedule:
     - cron: '0 3 * * 1'
 
+env:
+  JAVA_VERSION: '21'
+  
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: 'ubuntu-latest'
     permissions:
-      # required for all workflows
       security-events: write
-
-      # only required for workflows in private repositories
       actions: read
       contents: read
-
-      # required to fetch internal or private CodeQL packs
       packages: read
 
     strategy:
@@ -29,15 +27,17 @@ jobs:
         language: ["java-kotlin", "javascript-typescript"]
     
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Set up JDK 21
-      if: matrix.language == 'java-kotlin'
-      uses: actions/setup-java@v4
+    - name: Checkout code
+      uses: actions/checkout@v5
       with:
-        java-version: "21"
+        fetch-depth: 0
+
+    - name: Set up JDK
+      if: matrix.language == 'java-kotlin'
+      uses: actions/setup-java@v5
+      with:
         distribution: "temurin"
+        java-version: ${{ env.JAVA_VERSION }}
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -45,6 +45,16 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         queries: security-and-quality
+
+    - name: Install DBUpgrade-6.0.1.19.jar to local Maven repo
+      run: |
+        mvn install:install-file \
+          -Dfile=lib/DBUpgrade-6.0.1.19.jar \
+          -DgroupId=com.logister.tools \
+          -DartifactId=DBUpgrade \
+          -Dversion=6.0.1.19 \
+          -Dpackaging=jar \
+          -DgeneratePom=true
 
     - name: Build with Maven
       if: matrix.language == 'java-kotlin'
